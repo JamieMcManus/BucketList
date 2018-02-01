@@ -20,9 +20,37 @@ namespace BucketList
     /// </summary>
     public partial class MainWindow : Window
     {
+       
+
+        
+
         public MainWindow()
         {
             InitializeComponent();
+            List<TodoItem> items = new List<TodoItem>();
+        items.Add(new TodoItem() { Title = "Complete this WPF tutorial", Desc = "Desc", Status = false, Type = "Event", DateAdded = DateTime.Now, EventDate = new DateTime(2018, 1, 1) });
+            items.Add(new TodoItem() { Title = "Learn C#", Desc = "Desc", Status = false, Type = "Event", DateAdded = DateTime.Now, EventDate = new DateTime(2018, 1, 1) });
+            items.Add(new TodoItem() { Title = "Wash the car", Desc = "Desc", Status = false, Type = "Event", DateAdded = DateTime.Now });
+
+
+            icTodoList.ItemsSource = items;
+           
+
+            
+            
         }
     }
+
+
+    //Test for XAML formating
+    public class TodoItem
+    {
+        public string Title { get; set; }
+        public string Desc { get; set; }
+        public bool Status { get; set; }
+        public DateTime DateAdded { get; set; }
+        public string Type { get; set; }
+        public DateTime EventDate { get; set; }
+    }
 }
+ 

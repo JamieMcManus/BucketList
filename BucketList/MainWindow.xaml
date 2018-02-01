@@ -11,16 +11,21 @@
     </Window.Resources>
     <DockPanel LastChildFill="True">
 
+        <!-- Top Nav Bar-->
         <Grid  DockPanel.Dock="Top" Background="#3F3535" Height="40">
-            
-            
+               
         </Grid>
+
+        <!-- Footer-->
         <Grid  DockPanel.Dock="Bottom" Background="#3F3535" Height="40">
 
 
         </Grid>
+
+        <!-- Add new item sidebar section-->
         <StackPanel Orientation="Vertical" Width="150" HorizontalAlignment="Center" Background="#3F3535">
             <StackPanel.Resources>
+                <!-- Custom Styles -->
                 <Style  TargetType="{x:Type Label}">
                     <Setter Property="Foreground" Value="White" />
                     <Setter Property="FontSize" Value="20" />
@@ -30,20 +35,17 @@
 
                 </Style>
                 <Style  TargetType="{x:Type TextBox}">
-                    
-                    
                     <Setter Property="Background" Value="#F5F5F5" />
                     <Setter Property="Foreground" Value="Black" />
                     <Setter Property="FontSize" Value="16" />
                     <Setter Property="FontWeight" Value="Normal" />
                     <Setter Property="Margin" Value="5 0 5 0" />
                     <Setter Property="FontSize" Value="16" />
-                    
+
                 </Style>
-
-
             </StackPanel.Resources>
-            
+
+        
             <Label Content="Title"   />
             <TextBox Text="fdsafs"  Name="tbxTitle"  />
             <Label Content="Type"   />
@@ -63,13 +65,45 @@
                     VerticalScrollBarVisibility="Hidden" />
             <Button Name="btnAddItem" Content="Add Item" FontSize="20" FontWeight="Bold" Foreground="LightGray" Height="30" Margin="5 10 5 0" />
         </StackPanel>
-       
 
-
-
-        <Grid Background="#F5F5F5">
-            
-        </Grid>
         
+        <!-- Main Bucket List container-->
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <Grid Background="#F5F5F5">
+
+                
+                <ListView Name="icTodoList"  >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <!-- Fill Parent Container-->
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                    
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="160" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0"  Text="{Binding Title}" />
+                                <TextBlock  Grid.Column="1" Text="{Binding Desc}" />
+                                <TextBlock Grid.Column="2"  Text="{Binding Status}" />
+                                <TextBlock Grid.Column="3"   Text="{Binding DateAdded, StringFormat='MMMM'}" />
+                                <TextBlock  Grid.Column="4"  Text="{Binding Type}" />
+                                <TextBlock  Grid.Column="5" Text="{Binding EventDate,StringFormat='MMMM d'}" />
+
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+     </ScrollViewer>
     </DockPanel>
 </Window>
