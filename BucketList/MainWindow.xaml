@@ -61,7 +61,7 @@
                     AcceptsReturn="True"
                     HorizontalScrollBarVisibility="Disabled"
                     VerticalScrollBarVisibility="Hidden" />
-            <Button Name="btnAddItem" Content="Add Item" FontSize="20" FontWeight="Bold" Foreground="DimGray" Height="30" Margin="5 10 5 0" />
+            <Button Name="btnAddItem" Content="Add Item" FontSize="20" FontWeight="Bold" Foreground="LightGray" Height="30" Margin="5 10 5 0" />
         </StackPanel>
        
 
