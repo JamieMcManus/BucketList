@@ -5,15 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BucketList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000">
-    <Window.Resources>
         
-    </Window.Resources>
+       
+        WindowStartupLocation="CenterScreen"
+        Title="BucketList"   Background="Black" Height="650" Width="1000">
+
+    
+    
+    
     <DockPanel LastChildFill="True">
 
         <!-- Top Nav Bar-->
-        <Grid  DockPanel.Dock="Top" Background="#3F3535" Height="40">
-               
+        <Grid  DockPanel.Dock="Top" Background="#3F3535" Height="40"  >
+            <StackPanel Orientation="Horizontal">
+                <Image Name="imgLogo" Source="Images/BLogo.png" Width="40" Height="40" Stretch="UniformToFill" Margin="10 0 0 0" HorizontalAlignment="Left" />
+                <Label Content="Bucket List" FontFamily="MV Boli" FontWeight="ExtraBold" Foreground="White" FontSize="22" Margin="0 -5 10 0" FontStyle="Italic"/>
+
+            </StackPanel>
+            
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label Content="Sort by" FontFamily="Miranda" FontWeight="Bold" Foreground="White" FontSize="13" Margin="0 6 0 6" />
+                <ComboBox HorizontalAlignment="Right"  HorizontalContentAlignment="Center" Margin="0 10 20 13 " Width="60" FontFamily="Myriad Pro" >
+                    <ComboBoxItem HorizontalContentAlignment="Center">2017</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
         </Grid>
 
         <!-- Footer-->
